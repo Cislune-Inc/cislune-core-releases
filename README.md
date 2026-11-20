@@ -1,6 +1,20 @@
 # Cislune CORE
 
-Windows desktop controller for the CARVE CORE rover: wheels, bucket and a rotatable 3D servo-arm panel in one app.
+Windows and Linux desktop controller for the CARVE CORE rover: wheels, bucket and a rotatable 3D servo-arm panel in one app.
+
+## Download for Debian / Ubuntu Linux
+
+**[Download Linux installer (.deb)](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.5.0/cislune-core_0.5.0.preview1_amd64.deb)**
+
+**[Download Linux portable app (.tar.gz)](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.5.0/Cislune-CORE-0.5.0-linux-x64-portable.tar.gz)**
+
+Version **0.5.0 Preview** · Intel/AMD x64 · Debian 12/13 and Ubuntu 22.04/24.04/26.04 · Python included · No GitHub account needed.
+
+[Linux setup and Bluetooth/USB guide](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.5.0/LINUX-SETUP.md) · [SHA-256 checksums](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.5.0/SHA256SUMS.txt) · [Release details](https://github.com/Cislune-Inc/cislune-core-releases/releases/tag/cislune-core-v0.5.0)
+
+Install with `sudo apt install ./cislune-core_0.5.0.preview1_amd64.deb`, then open **Cislune CORE** in your application menu. For portable use, extract the complete archive and run `Cislune CORE/cislune-core`. Run the app as your normal user. On Wayland, XWayland is required; see the guide for desktop libraries and serial access.
+
+Pair once in Linux Bluetooth Settings, then select the paired rover in the app and Connect. Native BlueZ SPP handles Bluetooth without manually binding an RFCOMM port. Reconnect remembers the same peer/adapter and leaves controls paused until Resume. This Preview is unsigned; updates are manual. Uninstalling preserves settings and backups.
 
 ## Download for Windows
 
@@ -25,7 +39,7 @@ Get-FileHash .\Cislune-CORE-0.4.1-windows-x64-setup.exe -Algorithm SHA256
 
 ## Update the wheel Pico
 
-**Use app 0.4.1 with Pico firmware 0.4.1.** Older wheel firmware stays paused with an update instruction. The existing ESP32 0.2.0 naming/bridge firmware needs no update for these wheel changes.
+**Use Windows app 0.4.1 or Linux app 0.5.0 with Pico firmware 0.4.1.** Older wheel firmware stays paused with an update instruction. The existing ESP32 0.2.0 naming/bridge firmware needs no update for these wheel changes.
 
 - [Pico firmware (.uf2)](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.4.1/Cislune-CORE-Pico-0.4.1.uf2)
 - [Pico firmware package with notices (.zip)](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.4.1/Cislune-CORE-Pico-0.4.1-firmware.zip)
@@ -35,7 +49,7 @@ Isolate motor power. Hold **BOOTSEL** while plugging the Pico into USB, then cop
 
 ## Connect and control
 
-Pair the rover's Bluetooth Classic device once in Windows, or connect its ESP32 by USB. Install the appropriate USB-to-serial driver if Windows needs one. Select the rover's name/address and outgoing COM port in Cislune CORE and click **Connect**. The app remembers that identity and can reconnect after power cycles; reconnection leaves controls paused.
+On Windows, pair the rover's Bluetooth Classic device once, or connect its ESP32 by USB. Install the appropriate USB-to-serial driver if Windows needs one. Select the rover's name/address and outgoing COM port in Cislune CORE and click **Connect**. The app remembers that identity and can reconnect after power cycles; reconnection leaves controls paused.
 
 With wheels physically at rest, choose the wheel mode and limit, then press **Resume**:
 
@@ -52,6 +66,6 @@ Start checkout with wheels supported clear and motor-power isolation available. 
 
 ## Logs and updates
 
-Pose data, saved connection identity, backups and diagnostic logs stay under `%LOCALAPPDATA%\Cislune\CORE`. Uninstall preserves user data. Updates are manual. Bundled Windows dependency notices are included in `third-party-notices`; Pico notices and relink material accompany its firmware package.
+Pose data, saved connection identity, backups and diagnostic logs stay under `%LOCALAPPDATA%\Cislune\CORE` on Windows or `$XDG_STATE_HOME/cislune-core` on Linux (normally `~/.local/state/cislune-core`). Uninstall preserves user data. Updates are manual. Bundled Windows dependency notices are included in `third-party-notices`; Pico notices and relink material accompany its firmware package.
 
 This repository hosts public downloads and instructions. Application source is maintained separately.
