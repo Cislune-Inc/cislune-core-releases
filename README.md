@@ -4,7 +4,7 @@ Windows and Linux desktop controller for the CARVE CORE rover: wheels, bucket an
 
 ## Download for Debian / Ubuntu Linux
 
-**[Download Linux installer (.deb)](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.5.0/cislune-core_0.5.0~preview1_amd64.deb)**
+**[Download Linux installer (.deb)](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.5.0/cislune-core_0.5.0.preview1_amd64.deb)**
 
 **[Download Linux portable app (.tar.gz)](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.5.0/Cislune-CORE-0.5.0-linux-x64-portable.tar.gz)**
 
@@ -12,7 +12,7 @@ Version **0.5.0 Preview** · Intel/AMD x64 · Debian 12/13 and Ubuntu 22.04/24.0
 
 [Linux setup and Bluetooth/USB guide](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.5.0/LINUX-SETUP.md) · [SHA-256 checksums](https://github.com/Cislune-Inc/cislune-core-releases/releases/download/cislune-core-v0.5.0/SHA256SUMS.txt) · [Release details](https://github.com/Cislune-Inc/cislune-core-releases/releases/tag/cislune-core-v0.5.0)
 
-Install with `sudo apt install ./cislune-core_0.5.0~preview1_amd64.deb`, then open **Cislune CORE** in your application menu. For portable use, extract the complete archive and run `Cislune CORE/cislune-core`. Run the app as your normal user. On Wayland, XWayland is required; see the guide for desktop libraries and serial access.
+Install with `sudo apt install ./cislune-core_0.5.0.preview1_amd64.deb`, then open **Cislune CORE** in your application menu. For portable use, extract the complete archive and run `Cislune CORE/cislune-core`. Run the app as your normal user. On Wayland, XWayland is required; see the guide for desktop libraries and serial access.
 
 Pair once in Linux Bluetooth Settings, then select the paired rover in the app and Connect. Native BlueZ SPP handles Bluetooth without manually binding an RFCOMM port. Reconnect remembers the same peer/adapter and leaves controls paused until Resume. This Preview is unsigned; updates are manual. Uninstalling preserves settings and backups.
 
